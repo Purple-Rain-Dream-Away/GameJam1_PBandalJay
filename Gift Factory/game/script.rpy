@@ -6,6 +6,7 @@
 define c1 = Character("Clara")  # First customer
 define mic = Character("Michelle")  # Bouquet customer
 define b = Character("Big Billy")  # Noir customer
+define t = Character("Tall Lady")
 define m = Character("Me")
 
 
@@ -85,7 +86,7 @@ label start:
             "Insert Minigame":
                 ...
                 jump chapter2
-               
+
 
 
 label chapter2:
@@ -98,6 +99,7 @@ label chapter2:
     label .noir_customer:
         # Also this is still a placeholder
         scene bg club  # The bg suddenly shifts to black and white to reflect the shift to noir
+        with fade
 
         "A cool crispy breeze rolls in through the window. Good timing, damned fan stopped working."
 
@@ -118,15 +120,79 @@ label chapter2:
                 jump .doll_customer
 
             "Clench your fist. Tell him you have a real nice gift for him in your hand. Then, make a rude gesture":
-                jump dead
+                jump mafia_death
 
     label .doll_customer:
-        #
+        default look_behind = False
+        scene bg uni
+        with fade
 
-label dead:
+        "Suddenly, the breeze turns downright frigid. A chill runs through your spine and plucks your every nerve."
+
+        "A tall, grinning woman stoops through the door and pads towards you. It takes her only 3 steps to reach the counter."
+
+        "She stays there, staring, smiling for a good few seconds. Finally, she speaks."
+
+        t "Give me... a doll. Something preeeettyyy..."
+
+        t "Something any child will love..."
+
+        "She points behind you."
+
+        t "Like that one, right there"
+
+        "As per Company Regulation #355.1: all Gift Factory products are to be stored within the shelves and nooks of the establishment."
+
+        "There are no such shelves or nooks behind you. Only a blank, peeling wall and.... a window"
+
+        while not look_behind:
+            menu:
+                "Look behind you":
+                    $ look_behind = True
+
+                "Keep looking forward":
+                    "You have no choice. "
+
+        "Sitting innocently on the ledge right behind the window is a rancid, partly broken doll."
+
+        "In the places where it cracks, you see sickly green flesh. It makes this awful strained sound, like a laughing, dying goose."
+
+        "It has a voicebox, right on its chest. It looks broken."
+
+        t "As I said dear. I'll be taking that one."
+
+        menu:
+            "Give it to her. Whatever it is, you don't need it haunting you.":
+                jump chapter3
+
+            "Dispose of it. Right now. That {i}thing{/i} isn't even a part of this shop. No one should ever handle this.":
+                jump doll_death
+
+label mafia_death:
     "Real clever, sticking it to him like that. Real cheap way to find yourself 6 feet under."
 
+label doll_death:
+    "The drive home is a blur. Nothing but chrome-colored unfinished buildings line the way home anyway."
 
+    "You pull up into the driveway and fiddle with the singular key on your keychain."
 
+    "It slips. You bend down to retrieve it but it slips once more, into the bushes beside the stairway."
 
+    "You reach into the brush to grab it, only to be met with gashes running down your hand when you pull it back."
+
+    "You fling the door open and, once inside, slam it closed. You turn every light on, close every curtain, and flee for your bedroom."
+
+    "Just like you always did when you were a child. When you thought the monster would get you if you didn't run fast enough."
+
+    "But the soft, warm bed and the sturdy door always kept you safe. It always kept you safe."
+
+    "You slip under your blanket and you pray and your pray and your pray."
+
+    "Your mind drifts to someplace far away, where a closet begins to creak open."
+
+    "Somewhere, halfway across the world you like to think, a shadow peers from the closet door."
+
+    "Somewhere, so very far away from you, a rotten smell creeps closer and closer to your flimsy blanket fortress."
+
+    "This is the only way it could have ended."
     return
