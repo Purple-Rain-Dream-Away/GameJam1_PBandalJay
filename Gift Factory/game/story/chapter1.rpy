@@ -1,0 +1,86 @@
+label chapter1:
+    "In the world of placeholder, the fancies of the mind find purchase in reality."
+
+    "Children take flying rollercoasters to school, haunted houses are staffed by literal ghouls and ghosts"
+
+    "And every marketing campaign is headed by a cabal of blood-sucking vampires"
+
+    "Yet none of these match up to the Generous, Gorgeous, Gleaming, Glamorous Gift Factory."
+
+    jump .first_customer
+
+    label .first_customer:
+        scene bg lecturehall  # This is just a placeholder
+        with fade
+
+        "Today is your first day working in the Gift Factory."
+
+        "Your workplace has only one motto: the customer is always right"
+
+        "When a customer asks for something, you give it to them!"
+
+        "The dusty stacks and shelves of the Gift Factory are sure to contain exactly what they need."
+
+        show sylvie blue normal  # Again, this is also a placeholder
+
+        c1 "Good morning! I'm looking for a toy for my little sister."
+
+        c1 "She's a real fan of boxers: Mika Twoson, Emma Paksiw, Sugar Ria Lena. The greats."
+
+        # This line makes use of double quotes and italics. Note to self to check if it works
+        c1 "I mean really she never shuts up about them, and I thought to myself, \"Wouldn't it be great if she put all that energy into learning how to {i}actually{/i} punch people, instead of just watching other people do it?\""
+
+        c1 "So what I mean is, it'd be nice if I could give her something like a pair of boxing gloves."
+
+        menu:
+            "Boxing Gloves! What store doesn't have those."
+
+            "Looking through the catalogue, you decide to: "
+
+            "Give her a pair of small, red boxing gloves. A classic!":
+                jump .bouquet_customer
+
+            "Give her a pair of small, red boxing gloves with horseshoes inside it":  # This would be rly funny
+                jump .bouquet_customer  # Make special reaction to this? idk
+
+            "Probably some other option":
+                "placeholder"
+                return
+
+    label .bouquet_customer:
+        scene bg meadow  # Just a placeholder
+        with fade
+
+        "The Gift Factory is a miracle on Earth... A place where every dream is fulfilled and every wish granted."
+
+        "All sorts of people desperately seek refuge and healing through this fine establishment's wares."
+
+        "Just look at this fine young lady here: the tapping of her feet and the twinkling of her eyes betray her turbulent feelings."
+
+        mic "Hi! yes uhm, I was wondering if you had anything, uh, well anything {i}sophisticated{/i} and {i}lovely{/i} and {i}fragrant{/i} and..."
+
+        "Looks like {i}someone's{/i} in loveeeee."
+
+        mic "romantic?? Like, {size=-8}say{/size}, {size=-14}for instance{/size}, {size=-19}a bouquet...?{/size}"
+
+        "For Eons, young hopeful lovers have turned to the Gift Factory for the perfect present with which to woo the apple of their eyes."
+
+        menu:
+            "Today, it seems, is no different."
+
+            "Make her a bouquet for her dearly beloved":
+                call screen bouquet_minigame
+
+                # tweak this i suppose? unsure what to do depending on the bouquet given + placeholder dialogue
+                if flower_count == 0:
+                    mic "what the fuck is this"
+                    $ good_level -= 1
+                elif flower_count == 6:
+                    mic "thank you you are an angel sent from heaven"
+                    $ good_level += 2
+                else:
+                    mic "ok then"
+
+                jump chapter2
+    
+    

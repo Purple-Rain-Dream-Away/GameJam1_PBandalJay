@@ -1,0 +1,1 @@
+default good_level = 0
