@@ -3,8 +3,9 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define c1 = Character("Customer_1")
-define c2 = Character("Customer_2")
+define c1 = Character("Clara")  # First customer
+define mic = Character("Michelle")  # Bouquet customer
+define b = Character("Big Billy")  # Noir customer
 define m = Character("Me")
 
 
@@ -21,43 +22,71 @@ label start:
 
     "Yet none of these match up to the Generous, Gorgeous, Gleaming, Glamorous Gift Factory."
 
-    scene bg lecturehall  # This is just a placeholder
-    with fade
+    jump .first_customer
 
-    "Today is your first day working in the Gift Factory."
+    label .first_customer:
+        scene bg lecturehall  # This is just a placeholder
+        with fade
 
-    "Your workplace has only one motto: the customer is always right"
+        "Today is your first day working in the Gift Factory."
 
-    "When a customer asks for something, you give it to them!"
+        "Your workplace has only one motto: the customer is always right"
 
-    "The dusty stacks and shelves of the Gift Factory are sure to contain exactly what they need."
+        "When a customer asks for something, you give it to them!"
 
-    show sylvie blue normal  # Again, this is also a placeholder
+        "The dusty stacks and shelves of the Gift Factory are sure to contain exactly what they need."
 
-    c1 "Good morning! I'm looking for a toy for my little sister."
+        show sylvie blue normal  # Again, this is also a placeholder
 
-    c1 "She's a real fan of boxers: Mika Twoson, Emma Paksiw, Sugar Ria Lena. The greats."
+        c1 "Good morning! I'm looking for a toy for my little sister."
 
-    # This line makes use of double quotes and italics. Note to self to check if it works
-    c1 "I mean really she never shuts up about them, and I thought to myself, \"Wouldn't it be great if she put all that energy into learning how to {i}actually{/i} punch people, instead of just watching other people do it?\""
+        c1 "She's a real fan of boxers: Mika Twoson, Emma Paksiw, Sugar Ria Lena. The greats."
 
-    c1 "So what I mean is, it'd be nice if I could give her something like a pair of boxing gloves."
+        # This line makes use of double quotes and italics. Note to self to check if it works
+        c1 "I mean really she never shuts up about them, and I thought to myself, \"Wouldn't it be great if she put all that energy into learning how to {i}actually{/i} punch people, instead of just watching other people do it?\""
 
-    menu:
-        "Boxing Gloves! What store doesn't have those."
+        c1 "So what I mean is, it'd be nice if I could give her something like a pair of boxing gloves."
 
-        "Looking through the catalogue, you decide to: "
+        menu:
+            "Boxing Gloves! What store doesn't have those."
 
-        "Give her a pair of small, red boxing gloves. A classic!":
-            ...
+            "Looking through the catalogue, you decide to: "
 
-        "Give her a pair of small, red boxing gloves with horseshoes inside it":  # This would be rly funny
-            ...
+            "Give her a pair of small, red boxing gloves. A classic!":
+                jump .bouquet_customer
 
-        "Probably some other option":
-            ...
+            "Give her a pair of small, red boxing gloves with horseshoes inside it":  # This would be rly funny
+                jump .bouquet_customer  # Make special reaction to this? idk
 
-    jump chapter2
+            "Probably some other option":
+                ...
+
+    label .bouquet_customer:
+        scene bg meadow  # Just a placeholder
+        with fade
+
+        "The Gift Factory is a miracle on Earth... A place where every dream is fulfilled and every wish granted."
+
+        "All sorts of people desperately seek refuge and healing through this fine establishment's wares."
+
+        "Just look at this fine young lady here: the tapping of her feet and the twinkling of her eyes betray her turbulent feelings."
+
+        mic "Hi! yes uhm, I was wondering if you had anything, uh, well anything {i}sophisticated{/i} and {i}lovely{/i} and {i}fragrant{/i} and..."
+
+        "Looks like {i}someone's{/i} in loveeeee."
+
+        mic "romantic?? Like, {size=-8}say{/size}, {size=-14}for instance{/size}, {size=-19}a bouquet...?{/size}"
+
+        "For Eons, young hopeful lovers have turned to the Gift Factory for the perfect present with which to woo the apple of their eyes."
+
+        menu:
+            "Today, it seems, is no different."
+
+            "Insert Minigame":
+                ...
+                jump chapter2
+               
+
 
 label chapter2:
     "As the wheel turns and the days go on, a multitude of people pass into the store."
@@ -67,6 +96,7 @@ label chapter2:
     jump .noir_customer
 
     label .noir_customer:
+        # Also this is still a placeholder
         scene bg club  # The bg suddenly shifts to black and white to reflect the shift to noir
 
         "A cool crispy breeze rolls in through the window. Good timing, damned fan stopped working."
@@ -77,21 +107,21 @@ label chapter2:
 
         "He brandishes a gun with his right hand, and extends his left towards you."
 
-        c2 "Boss wants sumfin nice for his 78th birthday. Something real sparkly... or dangerous. Make it quick."
+        b "Boss wants sumfin nice for his 78th birthday. Something real sparkly... or dangerous. Make it quick."
 
         menu:
             "Mafia bosses. Buncha gunk-drinkin slime-spittin fat lowlife thugs. They got a penchant for gold"
 
             "Real fond o' lead too. And all the ways you can pump people full of it."
 
-            "Slide some 24-carat magic rings his way":
+            "Slide some 24-carat magic rings his way":  # Consider making a minigame for this
                 jump .doll_customer
 
             "Clench your fist. Tell him you have a real nice gift for him in your hand. Then, make a rude gesture":
                 jump dead
 
     label .doll_customer:
-        
+        #
 
 label dead:
     "Real clever, sticking it to him like that. Real cheap way to find yourself 6 feet under."
