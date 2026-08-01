@@ -57,18 +57,44 @@ label start:
         "Probably some other option":
             ...
 
-    jump customer2
+    jump chapter2
 
-# Genre shift to noir??
-label customer2:
+label chapter2:
     "As the wheel turns and the days go on, a multitude of people pass into the store."
 
     "Some... weirder than others"
 
-    scene bg club  # The bg suddenly shifts to black and white to reflect the shift to noir 
-    # Literally exact same background, but black and white
-    # Maybe make some small changes
+    jump .noir_customer
 
+    label .noir_customer:
+        scene bg club  # The bg suddenly shifts to black and white to reflect the shift to noir
+
+        "A cool crispy breeze rolls in through the window. Good timing, damned fan stopped working."
+
+        "A rugged figure bursts through the door, panting and eyes drooping and...."
+
+        "Perhaps still unbathed."
+
+        "He brandishes a gun with his right hand, and extends his left towards you."
+
+        c2 "Boss wants sumfin nice for his 78th birthday. Something real sparkly... or dangerous. Make it quick."
+
+        menu:
+            "Mafia bosses. Buncha gunk-drinkin slime-spittin fat lowlife thugs. They got a penchant for gold"
+
+            "Real fond o' lead too. And all the ways you can pump people full of it."
+
+            "Slide some 24-carat magic rings his way":
+                jump .doll_customer
+
+            "Clench your fist. Tell him you have a real nice gift for him in your hand. Then, make a rude gesture":
+                jump dead
+
+    label .doll_customer:
+        
+
+label dead:
+    "Real clever, sticking it to him like that. Real cheap way to find yourself 6 feet under."
 
 
 
