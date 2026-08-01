@@ -1,3 +1,6 @@
+default cake_quality = 0
+default cake_failed = False
+
 label chapter1:
     "In the world of placeholder, the fancies of the mind find purchase in reality."
 
@@ -81,6 +84,66 @@ label chapter1:
                 else:
                     mic "ok then"
 
-                jump chapter2
-    
-    
+                jump .tinapay_customer
+
+    label .tinapay_customer:
+        scene bg club
+
+        "The sun sets as the end of the day draws closer."
+
+        if good_level > 0:
+            "You begin to grow attached to this job. Seeing the smiles on the customer's face, excited to bring joy to someone they hold dear."
+        
+        "A middle-aged man walks in. He looks exhausted, presumably from a hard day's work."
+
+        m "What can I get you, good sir?"
+
+        mm "I'd like a cake, please. Thought I'd bring home a little surprise for my children back at home."
+
+        "How sweet. Pun intended."
+
+        m "Alright, what kind of cake do you want?"
+
+        mm "Red Velvet. Not really a fan of it myself, but the kids seem to love that stuff."
+
+        m "One Red Velvet cake, coming right up!"
+
+        "By some miracle, you have everything you need to make such a cake."
+
+        "You quickly get to work."
+
+        # cake minigame
+
+        if cake_quality <= 0 and not cake_failed:
+            mm "This is... not really what I had in mind..."
+
+            menu:
+                "Make him a new cake.":
+                    m "Oh, sorry! My mistake, I was just so engrossed in our conversation."
+        
+                    m "I'll make you a new one as a replacement, how about that?"
+
+                "Give him this cake."
+            # cake minigame pt 2
+
+        elif cake_quality <= 0 and cake_failed:
+            mm "You know what, I'll just take it. I'm sure my kids would be happy with it anyway."
+
+
+
+        # edit cake quality boundaries
+        elif 0 < cake_quality <= 3:
+            mm "This looks great, thank you! I'm sure my kids will love it."
+            
+            $ good_level += 1
+
+            jump chapter2
+
+        else:
+            mm "This is perfect! Thank you so much, I didn't expect to get such an amazing cake!"
+
+            mm "My kids will be so happy when they see it, I'm sure of it!"
+
+            $ good_level += 2
+            
+            jump chapter2
