@@ -3,31 +3,27 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define c1 = Character("Customer_1")
+define m = Character("Me")
 
 
 # The game starts here.
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    scene bg lecturehall
+    with fade
 
-    scene bg room
+    "In the world of [placeholder], the fancies of the mind find purchase in reality."
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    "Children take flying rollercoasters to school, haunted houses are staffed by literal ghouls and ghosts"
 
-    show eileen happy
+    "And every marketing campaign is headed by a cabal of blood-sucking vampires"
 
-    # These display lines of dialogue.
+    "Yet none of these match up to the Generous, Gorgeous, Gleaming, Glamorous Gift Factory."
 
-    e "You've created a new Ren'Py game."
+    scene show bg lecturehall  # This is just a placeholder
+    
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
 
     return
