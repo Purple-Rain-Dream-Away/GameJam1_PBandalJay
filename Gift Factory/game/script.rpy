@@ -14,7 +14,7 @@ label start:
     scene bg lecturehall
     with fade
 
-    "In the world of [placeholder], the fancies of the mind find purchase in reality."
+    "In the world of placeholder, the fancies of the mind find purchase in reality."
 
     "Children take flying rollercoasters to school, haunted houses are staffed by literal ghouls and ghosts"
 
@@ -56,7 +56,7 @@ label start:
 
         "Probably some other option":
             ...
-    
+
 
 
 
