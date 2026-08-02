@@ -1,9 +1,92 @@
+default chosen_for_dog = None
+default look_behind = False
+default your_health = 10
+default enemy_health = 10
+default enemy_action = 0
+default your_damage = 0
+
 label chapter2:
     "As the wheel turns and the days go on, a multitude of people pass into the store."
 
     "Some... weirder than others"
 
-    jump .noir_customer
+    label .dog_customer:
+        scene bg uni
+        with fade
+
+        "A girl nervously walks into the store."
+        
+        kg "H-hello! I'd like to b-buy a collar."
+
+        kg "For my d-dog."
+
+        m "Alright, just give me a minute."
+
+        "Why is she so nervous?"
+
+        "Doesn't matter, let's go find what she needs."
+
+        # PAN TO SHELF
+
+        m "What kind of collar are you looking for?"
+
+        kg "S-something simple, my \"dog\" isn't t-too picky."
+
+        m "I'll see what we have in stock."
+
+        # SHELF MINIGAME
+        m "This one should do."
+
+        # SWITCH TO COUNTER
+
+        if chosen_for_dog == "good_collar":
+            $ good_level += 1
+
+            kg "Thank y-you. I'm sure my \"\"dog\"\" will love this a lot."
+
+            m "You're welcome. If I may ask, could I see a picture of your dog?"
+
+            kg "Y-you want to see a picture of my \"\"\"dog\"\"\"?"
+
+            m "Yeah, I love dogs! I'd love to see the pupper this collar is going to."
+
+            kg "S-sorry, I d-don't think he'd like it if I showed a s-stranger a p-picture of him."
+
+            kg "M-my \"\"\"\"dog\"\"\"\", I m-mean."
+
+            m "No worries, have a good day!"
+
+            "Weird."
+
+        elif chosen_for_dog == "decent_collar":
+            kg "N-not exactly what he h-had in mind but it'll do."
+
+            kg "My \"\"dog\"\", I mean."
+
+            m "Sorry, it's all we had."
+
+            kg "It's f-fine, I'm sure he'll still b-be happy with it. My \"\"\"dog\"\"\"."
+        
+            "Weird."
+
+        else:
+            $ good_level -= 1
+            kg "W-what is this? I asked for a c-collar."
+
+            kg "For m-my \"\"dog\"\"."
+
+            kg "I don't t-think he's going to be too happy with this."
+
+            kg "My \"\"\"dog\"\"\", I mean."
+
+            "She takes the item and leaves, clearly upset"
+
+            "What's up with her and her dog?"
+
+        jump .noir_customer
+
+
+    #jump .noir_customer
 
     label .noir_customer:
         # Also this is still a placeholder
@@ -26,6 +109,39 @@ label chapter2:
             "Real fond o' lead too. And all the ways you can pump people full of it."
 
             "Slide some 24-carat magic rings his way":  # Consider making a minigame for this
+                # BG CHANGE
+
+                # EXPOSITORY DIALOGUE
+
+                while your_health > 0 and enemy_health > 0:
+                    if enemy_health > 0:
+                        $ enemy_action = renpy.random.randint(0,1)
+                    if enemy_action == 0:
+                        "Looks like he's going for an attack."
+                    else:
+                        "He awaits your next move."
+                    menu:
+                        "Attack":
+                            $ your_damage = renpy.random.randint(0, 4)
+                            if your_damage == 0:
+                                "He blocked it!"
+                            else:
+                                $ enemy_health -= your_damage
+                                "You did some damage!"
+                            if enemy_action == 0:
+                                $ your_health -= renpy.random.randint(1,3)
+                                "You were hit."
+                                if your_health <= 0:
+                                    "You black out."
+                                    jump .murim_customer
+                        "Defend":
+                            if enemy_action == 0:
+                                "You blocked his attack!"
+                            else:
+                                "That was pointless." 
+                # BACK TO COUNTER
+                $ good_level += 1
+                # DIALOGUE HAND HIM THE RING
                 jump .murim_customer
 
             "Clench your fist. Tell him you have a real nice gift for him in your hand. Then, make a rude gesture":
@@ -127,7 +243,6 @@ label chapter2:
                 return
 
     label .doll_customer:
-        default look_behind = False
         scene bg uni
         with fade
 
@@ -171,6 +286,14 @@ label chapter2:
 
             "Dispose of it. Right now. That {i}thing{/i} isn't even a part of this shop. No one should ever handle this.":
                 jump doll_death
+  
+    label .ashes_customer:
+        "placeholder"
+        
+        
+
+label fight_death:
+    "DIE"
 
 label mafia_death:
     "Real clever, sticking it to him like that. Real cheap way to find yourself 6 feet under."

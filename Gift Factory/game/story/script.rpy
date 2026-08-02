@@ -10,6 +10,7 @@ define t = Character("Tall Lady")
 define m = Character("Me")
 define mg = Character("The Blessed Dragon of the Mount Hwa Sect") # murim guy
 define mm = Character("Middle-aged Man")
+define kg = Character("Anxious Girl")
 # The game starts here.
 
 

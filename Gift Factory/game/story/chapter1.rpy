@@ -1,5 +1,4 @@
 default cake_quality = 0
-default cake_failed = False
 
 label chapter1:
     "In the world of placeholder, the fancies of the mind find purchase in reality."
@@ -112,9 +111,28 @@ label chapter1:
 
         "You quickly get to work."
 
-        # cake minigame
+        # cake minigame pt1
 
-        if cake_quality <= 0 and not cake_failed:
+        mm "Must be boring sitting around all day in here, huh?"
+
+        m "It's not that bad, customers come by pretty often and their requests can sometimes be entertaining."
+
+        # cake minigame pt2
+
+        m "What do you do for work, by the way?"
+
+        mm "I'm a construction worker. Working on the building just a few blocks over."
+
+        mm "It's hard, and I always come home exhausted, but I'd do anything for my family."
+
+        #cake minigame pt3
+
+        menu:
+            "Give him the cake":
+                m "Here you go!"
+
+
+        if cake_quality <= 0:
             mm "This is... not really what I had in mind..."
 
             menu:
@@ -122,13 +140,20 @@ label chapter1:
                     m "Oh, sorry! My mistake, I was just so engrossed in our conversation."
         
                     m "I'll make you a new one as a replacement, how about that?"
+                    
+                    # cake minigame redo
 
-                "Give him this cake."
-            # cake minigame pt 2
-
-        elif cake_quality <= 0 and cake_failed:
+                "Give him this cake.":
+                    "The man leaves dissapointed."
+                    $ good_level -= 1
+                    jump chapter2
+            
+    
+        if cake_quality <= 0:
             mm "You know what, I'll just take it. I'm sure my kids would be happy with it anyway."
-
+            $ good_level -= 2
+            
+            jump chapter2
 
 
         # edit cake quality boundaries
