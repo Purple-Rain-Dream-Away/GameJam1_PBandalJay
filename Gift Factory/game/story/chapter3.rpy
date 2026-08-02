@@ -16,10 +16,30 @@ label chapter3:
 
         "A naked, green man stumbles through the door and stares at you with its space-black, beady eyes."
 
-        "It awkwardly raises its hands in a sign of peace; then hesitantly lowers it."
+        "It awkwardly raises its hands in a sign of peace; then hesitantly lowers them."
 
-        
+        a "Oxygen and Heat upon you, Earthling!"
 
+        a "My people, the Qudxy, require an {i}exotic animal{/i} for our arkship sanctuaries."
+
+        a "In time we hope to construct a zoo-arcology of such immense proportions as to be able to populate an entire world."
+
+        a "We've heard that this planet hosts a unique creature currently unknown to the cosmos at large."
+
+        a "A stout, gaseous and supposedly delicious herbivore known as: The Cow."
+
+        a "It'll be perfect for our kitch- sanctuaries! I meant sanctuaries!"
+
+        "It just so happens that the Gift Factory ALWAYS keeps a singular (1) cow on the premises for just this occassion."
+
+        menu:
+            "Let them take our company-mandated Big Bertha, never to be seen again.":
+                ...  # Minigame maybe??
+
+            "Inform them that Big Bertha is a beloved member of the family, and she has been for 50 long years! Nobody can take her away from us!":
+                ...  # idk refusal tracker??
+
+        jump .skeleton_customer
     label .skeleton_customer:
         "placeholder"
 
@@ -56,9 +76,11 @@ label chapter3:
             "And you just gave it to that lovely alien fellow a bit earlier."
 
             # Trying to use double quotation marks here
-            "However! it is undoubtable that Big Bessie must have left some \"gifts\" of her own."
+            "However! it is undoubtable that Big Bertha must have left some \"gifts\" of her own."
 
-            # Insert cow poop minigame. js drag and drop cow poop ig
+            # Insert cow poop minigame. js drag and drop cow poop??? maybe??
+
+        jump .final_customer 
 
 
     label .final_customer:
