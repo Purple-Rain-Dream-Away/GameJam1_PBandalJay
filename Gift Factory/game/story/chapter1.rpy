@@ -12,8 +12,10 @@ label chapter1:
     jump .first_customer
 
     label .first_customer:
-        scene bg lecturehall  # This is just a placeholder
+        scene store
         with fade
+
+        show desk
 
         "Today is your first day working in the Gift Factory."
 
@@ -23,7 +25,7 @@ label chapter1:
 
         "The dusty stacks and shelves of the Gift Factory are sure to contain exactly what they need."
 
-        show sylvie blue normal  # Again, this is also a placeholder
+        show clara_customer
 
         c1 "Good morning! I'm looking for a toy for my little sister."
 

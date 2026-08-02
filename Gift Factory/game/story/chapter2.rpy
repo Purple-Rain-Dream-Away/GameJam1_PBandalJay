@@ -90,10 +90,14 @@ label chapter2:
 
     label .noir_customer:
         # Also this is still a placeholder
-        scene bg club  # The bg suddenly shifts to black and white to reflect the shift to noir
+        scene grey_store  # The bg suddenly shifts to black and white to reflect the shift to noir
         with fade
 
+        show grey_desk
+
         "A cool crispy breeze rolls in through the window. Good timing, damned fan stopped working."
+
+        show mafia_customer
 
         "A rugged figure bursts through the door, panting and eyes drooping and...."
 
@@ -148,9 +152,6 @@ label chapter2:
                 jump mafia_death
     
     label .murim_customer:
-        scene bg uni  # Just a placeholder
-        with fade
-
         "It's been 500 years since the defeat of the Demonic Cult."
 
         "An era of peace for the Murim that proved to be quite prosperous."
@@ -158,6 +159,8 @@ label chapter2:
         "The Gift Factory has been passed down for generations, known across the lands for offering wares for any occasion."
         
         "And as the day goes by, another customer has come looking for this humble merchant."
+
+        show murim_customer
 
         mg "Greetings, dear merchant. Alas, after a long journey to the west, I've finally arrived at the renowned Gift Factory!"
 
@@ -295,8 +298,12 @@ label chapter2:
 label fight_death:
     "DIE"
 
+    return
+
 label mafia_death:
     "Real clever, sticking it to him like that. Real cheap way to find yourself 6 feet under."
+
+    return
 
 label doll_death:
     "The drive home is a blur. Nothing but chrome-colored unfinished buildings line the way home anyway."
