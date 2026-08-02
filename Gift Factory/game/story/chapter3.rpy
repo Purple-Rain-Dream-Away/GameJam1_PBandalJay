@@ -40,8 +40,29 @@ label chapter3:
                 ...  # idk refusal tracker??
 
         jump .skeleton_customer
+
     label .skeleton_customer:
-        "placeholder"
+        "As the alien flies away on his UFO, a new customer steps into the shop..."
+
+        "First come the legs, completely devoid of skin, hopping in like it's just another tuesday."
+
+        "Then come the ribs, spine and skull, tossed in by an unseen individual."
+
+        "Finally, the arms crawl in with a teeth-chattering rattle behind every stretch and grab."
+
+        "The pieces all flail around and conjoin until reaching the correct arrangement: that of a humanoid skeleton."
+
+        s "HAW HAW HAW! bet that scared you didn't it?"
+
+        s "Not to worry fleshboy! I'm not here to hurt you"
+
+        s "I'm here for your assistance! My dear husband, you see, we've been together for 7 years."
+
+        s "He's always had the most {i}gorgeous{/i} bones. He plates them with gold, you see."
+
+        s "Unfortunately, his ribs recently broke due to a skydiving incident. We were flying above the Bermuda Triangle you see."
+
+        s "And so that brings us here. I require the most fabulous, ostentatious and audacious ribs you have in store!"
 
     label .elf_customer:
         "A 7-foot tall, elegant figure strides through the doorway and into your shop"
@@ -80,7 +101,7 @@ label chapter3:
 
             # Insert cow poop minigame. js drag and drop cow poop??? maybe??
 
-        jump .final_customer 
+        jump .final_customer
 
 
     label .final_customer:

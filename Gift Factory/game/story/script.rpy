@@ -13,6 +13,7 @@ define mm = Character("Middle-aged Man")
 define kg = Character("Anxious Girl")
 define e = Character("Elf")
 define a = Character("Alien dude")
+define s = Character('Skeleton')
 # The game starts here.
 
 
