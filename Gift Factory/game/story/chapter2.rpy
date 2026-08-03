@@ -105,7 +105,6 @@ label chapter2:
 
         "He brandishes a gun with his right hand, and extends his left towards you."
 
-        b "Boss wants sumfin nice for his 78th birthday. Something real sparkly... or dangerous. Make it quick."
         b "Boss wants sumfin nice for his 78th birthday. Something real sparkly. Make it quick."
 
         menu:
