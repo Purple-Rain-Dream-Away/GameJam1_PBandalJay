@@ -133,10 +133,44 @@ label chapter3:
 
         s "And so that brings us here. I require the most fabulous, ostentatious and audacious ribs you have in store!"
 
+<<<<<<< HEAD
+=======
+    label .elf_customer:
+        show elf_customer
+
+        "A 7-foot tall, elegant figure strides through the doorway and into your shop"
+>>>>>>> c9346c4fdb9d5b43aab49f6362abb34a38bf963d
 
 
 
     label .final_customer:
-        "placeholder"
+        "As the day draws closer to its end, you feel an exceptional pressure from just beyond the Gift Factory's walls."
+
+        "A weeping man stands at the doorway, brandishing a gun and aiming straight for your head."
+
+        u "WHERE IS IT"
+
+        u "TELL ME WHERE IT IS"
+
+        u "WHERE DID YOU HIDE THE ASHES OF MY BROTHER"
+
+        m "Woah woah calm dow-"
+
+        u "DONT YOU TELL ME TO CALM DOWN"
+
+        u "THAT MANIAC THAT CAME INTO YOUR STORE KILLED MY BROTHER"
+
+        "He cocks his gun and takes a deep breath"
+
+        u "He sent me that cake of yours. Said you used my brother's ashes to bake it."
+
+        u "He's dead now. That animal got what he deserved."
+
+        u "But there's still one lose end left."
+
+        u "YOU"
+
+        menu:
+            ... 
     
     return
