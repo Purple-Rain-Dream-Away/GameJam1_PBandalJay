@@ -151,8 +151,11 @@ label chapter3:
 
         s "And so that brings us here. I require the most fabulous, ostentatious and audacious ribs you have in store!"
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 1a6ea3e0869b7d4158da1f652db3b933d7ffeb05
 
     label .final_customer:
         scene store with fade
@@ -193,5 +196,44 @@ label chapter3:
 
         u "YOU"
 
+<<<<<<< HEAD
+=======
+        if not used_ashes:
+            m "Wait! your brother's ashes are right here."
+
+            m "I knew something was wrong with that man. He told me it was just powder."
+
+            m "But when I looked into the box and saw... that, I knew something was up."
+
+            m "Here. It's yours now."
+
+            "He tenderly reaches for the box of ashes."
+
+            u "..."
+
+            u "Thank you."
+
+            u "Thank you so much."
+
+            jump good_ending
+        else:
+            m "Wait! I didn't mean to use your brother's ashes."
+
+            m "When that man told me to use it, he said it was just powder!"
+
+            m "I swear! I didn't know any better."
+
+            "He sneers at you, and pulls the trigger."
+
+            u "Go to hell."
+
+            jump bad_ending
+
+label good_ending:
+    return
+
+label bad_ending:
+    return
+>>>>>>> 1a6ea3e0869b7d4158da1f652db3b933d7ffeb05
     
     return
