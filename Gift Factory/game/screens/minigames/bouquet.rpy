@@ -4,13 +4,13 @@ default flowers_in_bouquet = []
 init python:
 
     def flower_dragged(drags, drop):
-
         if not drop:
             if drags[0] in flowers_in_bouquet:
                 store.flowers_in_bouquet.remove(drags[0])
                 store.flower_count -= 1
 
         else:
+            drop.top()
             if drags[0] not in flowers_in_bouquet:
                 store.flower_count += 1
                 store.flowers_in_bouquet.append(drags[0])
@@ -25,12 +25,6 @@ screen bouquet_minigame:
     draggroup:
 
         drag:
-            drag_name "Bouquet"
-            draggable False
-            xpos 500 ypos 500
-
-            add "images/minigames/bouquet/bouquet bouquet real.png"
-        drag:
             drag_name "Red"
             droppable False
             dragged flower_dragged
@@ -42,7 +36,7 @@ screen bouquet_minigame:
             drag_name "Orange"
             droppable False
             dragged flower_dragged
-            xpos 100 ypos 300
+            xpos 300 ypos 300
 
             add "images/minigames/bouquet/orange bouquet flower.png"
 
@@ -58,7 +52,7 @@ screen bouquet_minigame:
             drag_name "Green"
             droppable False
             dragged flower_dragged
-            xpos 1000 ypos 100
+            xpos 1600 ypos 100
 
             add "images/minigames/bouquet/green bouquet flower.png"
 
@@ -66,7 +60,7 @@ screen bouquet_minigame:
             drag_name "Blue"
             droppable False
             dragged flower_dragged
-            xpos 1000 ypos 300
+            xpos 1400 ypos 300
 
             add "images/minigames/bouquet/blue bouquet flower.png"
         
@@ -74,10 +68,16 @@ screen bouquet_minigame:
             drag_name "Purple"
             droppable False
             dragged flower_dragged
-            xpos 1000 ypos 500
+            xpos 1600 ypos 500
 
             add "images/minigames/bouquet/purple bouquet flower.png"
         
+        drag:
+            drag_name "Bouquet"
+            draggable False
+            xpos 670 ypos 500
+            add "images/minigames/bouquet/bouquet bouquet real.png"
+    
     vbox:
         textbutton "finish bouquet":
             action finish_bouquet

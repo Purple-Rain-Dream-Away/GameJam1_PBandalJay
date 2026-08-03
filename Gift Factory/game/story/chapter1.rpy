@@ -1,3 +1,8 @@
+image cake good = "images/minigames/food making/cake_good.png"
+image cake okay = "images/minigames/food making/cake_okay.png"
+image cake bad = "images/minigames/food making/cake_bad.png"
+image cake = "images/minigames/food making/cake_base.png"
+
 label chapter1:
     "In the world of placeholder, the fancies of the mind find purchase in reality."
 
@@ -25,6 +30,10 @@ label chapter1:
 
         show clara_customer
 
+        hide desk
+
+        show desk
+
         c1 "Good morning! I'm looking for a toy for my little sister."
 
         c1 "She's a real fan of boxers: Mika Twoson, Emma Paksiw, Sugar Ria Lena. The greats."
@@ -34,24 +43,26 @@ label chapter1:
 
         c1 "So what I mean is, it'd be nice if I could give her something like a pair of boxing gloves."
 
-        menu:
-            "Boxing Gloves! What store doesn't have those."
+        "Boxing Gloves! What store doesn't have those."
 
-            "Looking through the catalogue, you decide to: "
+        "Looking through the catalogue, you decide to give her:"
+        
+        call screen shelf_boxing
 
-            "Give her a pair of small, red boxing gloves. A classic!":
-                jump .bouquet_customer
+        if gloves_chosen == "normal":
+            "place"
+        elif gloves_chosen == "horseshoe":
+            "holder"
 
-            "Give her a pair of small, red boxing gloves with horseshoes inside it":  # This would be rly funny
-                jump .bouquet_customer  # Make special reaction to this? idk
+        jump .bouquet_customer
 
-            "Probably some other option":
-                "placeholder"
-                return
+
 
     label .bouquet_customer:
-        scene bg meadow  # Just a placeholder
+        scene store
         with fade
+
+        show desk
 
         "The Gift Factory is a miracle on Earth... A place where every dream is fulfilled and every wish granted."
 
@@ -60,6 +71,10 @@ label chapter1:
         "Just look at this fine young lady here: the tapping of her feet and the twinkling of her eyes betray her turbulent feelings."
 
         show delinquent_customer
+        
+        hide desk
+
+        show desk
 
         mic "Hi! yes uhm, I was wondering if you had anything, uh, well anything {i}sophisticated{/i} and {i}lovely{/i} and {i}fragrant{/i} and..."
 
@@ -88,7 +103,10 @@ label chapter1:
                 jump .tinapay_customer
 
     label .tinapay_customer:
-        scene bg club
+        scene store
+        with fade
+
+        show desk
 
         "The sun sets as the end of the day draws closer."
 
@@ -96,6 +114,10 @@ label chapter1:
             "You begin to grow attached to this job. Seeing the smiles on the customer's face, excited to bring joy to someone they hold dear."
 
         show construction_customer
+        
+        hide desk
+
+        show desk
 
         "A middle-aged man walks in. He looks exhausted, presumably from a hard day's work."
 
@@ -115,16 +137,20 @@ label chapter1:
 
         "You quickly get to work."
 
+        hide construction_customer
+
         call screen cake_pt1
-
        
-
-        show expression "images/minigames/food making/" + ("cake_bad.png", "cake_okay.png", "cake_good.png")[bowl_score] at center
+        if bowl_score == 0:
+            show cake bad at truecenter
+        elif bowl_score == 1:
+            show cake okay at truecenter
+        else:
+            show cake good at truecenter
         
         "Voila!"
 
-        hide expression "images/minigames/food making/" + ("cake_bad.png", "cake_okay.png", "cake_good.png")[bowl_score]
-
+        hide cake
 
         # cut content, might bring back
         # mm "Must be boring sitting around all day in here, huh?"
@@ -139,7 +165,7 @@ label chapter1:
 
         #cake minigame pt3
 
-        menu:
+        menu:   
             "Give him the cake":
                 m "Here you go!"
 
@@ -149,17 +175,22 @@ label chapter1:
 
             menu:
                 "Make him a new cake.":
-                    m "Oh, sorry! My mistake, I was just so engrossed in our conversation."
+                    #m "Oh, sorry! My mistake, I was just so engrossed in our conversation."
         
                     m "I'll make you a new one as a replacement, how about that?"
                     
                     call screen cake_pt1
-
-                    show expression "images/minigames/food making/" + ("cake_bad.png", "cake_okay.png", "cake_good.png")[bowl_score] at center
+                
+                    if bowl_score == 0:
+                        show cake bad at truecenter
+                    elif bowl_score == 1:
+                        show cake okay at truecenter
+                    else:
+                        show cake good at truecenter
                     
                     "Voila!"
 
-                    hide expression "images/minigames/food making/" + ("cake_bad.png", "cake_okay.png", "cake_good.png")[bowl_score]
+                    hide cake
 
                 "Give him this cake.":
                     "The man leaves dissapointed."
@@ -168,7 +199,7 @@ label chapter1:
             
     
         if bowl_score <= 0:
-            mm "You know what, I'll just take it. I'm sure my kids would be happy with it anyway."
+            mm "You know what, I'll just take it. I'm sure my kids will be happy with it anyway."
             $ good_level -= 2
             
             jump chapter2

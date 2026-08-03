@@ -331,10 +331,10 @@ label chapter2:
         menu:
             # insert minigame
             "Bake the cake using the ashes":
-                ...
+                ""
 
             "Bake the cake without using the ashes":
-                ...
+                ""
 
 
 

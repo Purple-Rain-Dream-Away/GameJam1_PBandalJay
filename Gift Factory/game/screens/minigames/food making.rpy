@@ -34,7 +34,7 @@ screen cake_pt1:
             draggable False
             xpos 500 ypos 500
 
-            add "images/minigames/food making/"
+            add "images/minigames/food making/bowl.png"
 
         drag:
             drag_name "egg"
