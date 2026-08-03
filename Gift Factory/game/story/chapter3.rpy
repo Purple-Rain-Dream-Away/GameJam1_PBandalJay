@@ -227,6 +227,8 @@ label chapter3:
             jump bad_ending
 
 label good_ending:
+    scene black with fade
+
     "A job well done it would seem."
 
     "Your first three days here have been rather eventful."
@@ -251,6 +253,8 @@ label good_ending:
     return
 
 label bad_ending:
+    scene black with fade
+
     "You lay on the floor, bleeding and cold."
 
     "These three days have been the most arduous in your entire life."
