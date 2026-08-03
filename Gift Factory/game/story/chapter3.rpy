@@ -112,7 +112,9 @@ label chapter3:
 
         call screen get_cow
 
+        ad "Many thanks, earthling. Bleep bloop beep borp."
 
+        "Sure hope that meant something good."
 
         jump .skeleton_customer
 
@@ -121,9 +123,9 @@ label chapter3:
         
         show desk
         
-        "Here comes another one right now."
+        "And another."
 
-        show alien_customer
+        show skeleton_customer
 
         hide desk
 
@@ -151,6 +153,10 @@ label chapter3:
 
         s "And so that brings us here. I require the most fabulous, ostentatious and audacious ribs you have in store!"
 
+        menu:
+            "Give him that one rib you just so conveniently found that time. This was definitely something that happened":
+                s "That'll do nicely, human! My dear husband will be so thrilled that he'll feel it in his bones!"
+
 
 
 
@@ -159,15 +165,13 @@ label chapter3:
         
         show desk
         
-        "Here comes another one right now."
+        "As the day draws closer to its end, you feel an exceptional pressure from just beyond the Gift Factory's walls."
 
         show final_customer
 
         hide desk
 
         show desk
-
-        "As the day draws closer to its end, you feel an exceptional pressure from just beyond the Gift Factory's walls."
 
         "A weeping man stands at the doorway, brandishing a gun and aiming straight for your head."
 

@@ -17,7 +17,7 @@ define ad = Character("Alien dude")
 define s = Character('Skeleton')
 define h = Character("Hand")
 define cow = Character("Cow")
-
+define u = Character("Enraged Customer")
 
 # The game starts here.
 define config.layers = [  "foreground", 'master', 'transient', 'screens','overlay' ]

@@ -1,5 +1,5 @@
 screen ring:
-    add "images/minigames/backgrounds/basic_background.png"
+    add "images/minigames/backgrounds/grey_basic_background.png"
 
     imagebutton:
         idle "images/minigames/mafia/magic_ring.png"

@@ -1,4 +1,4 @@
-default chosen_for_dog = None
+
 default look_behind = False
 default your_health = 10
 default enemy_health = 10
@@ -128,7 +128,7 @@ label chapter2:
             "Real fond o' lead too. And all the ways you can pump people full of it."
 
             "Go out back and find him a 24-carat magic golden ring":  # Consider making a minigame for this
-                scene basic_background
+                scene grey_basic_background
 
                 show hand at truecenter
                 
@@ -176,7 +176,7 @@ label chapter2:
 
                 call screen ring
 
-                scene basic_background
+                scene grey_basic_background
 
                 "Betta get back to the customah."
 
@@ -424,10 +424,10 @@ label chapter2:
         menu:
             # insert minigame
             "Bake the cake using the ashes":
-                ""
+                $ used_ashes = True
 
             "Bake the cake without using the ashes":
-                ""
+                $ used_ashes = False
         
         jump chapter3
 
