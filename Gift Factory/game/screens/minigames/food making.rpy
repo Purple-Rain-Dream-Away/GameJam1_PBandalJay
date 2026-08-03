@@ -34,14 +34,14 @@ screen cake_pt1:
         drag:
             drag_name "bowl"
             draggable False
-            xpos 500 ypos 500
+            align (0.5, 0.5)
 
             add "images/minigames/food making/bowl.png"
 
         drag:
             drag_name "egg"
             droppable False
-            xpos 250 ypos 500
+            xpos 200 ypos 100
             dragged ingredient_dragged_to_bowl
 
             add "images/minigames/food making/egg.png"
@@ -49,7 +49,7 @@ screen cake_pt1:
         drag:
             drag_name "flour"
             droppable False
-            xpos 250 ypos 250
+            xpos 200 ypos 500
             dragged ingredient_dragged_to_bowl
 
             add "images/minigames/food making/flour.png"
@@ -57,7 +57,7 @@ screen cake_pt1:
         drag:
             drag_name "milk"
             droppable False
-            xpos 750 ypos 500
+            xpos 1300 ypos 100
             dragged ingredient_dragged_to_bowl
 
             add "images/minigames/food making/milk.png"
@@ -65,7 +65,7 @@ screen cake_pt1:
         drag:
             drag_name "sugar white stuff"
             droppable False
-            xpos 750 ypos 250
+            xpos 1300 ypos 500
             dragged ingredient_dragged_to_bowl
 
             add "images/minigames/food making/sugar white stuff.png"

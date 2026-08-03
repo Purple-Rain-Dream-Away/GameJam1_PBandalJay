@@ -3,6 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+
 define c1 = Character("Clara")  # First customer
 define mic = Character("Michelle")  # Bouquet customer
 define b = Character("Big Billy")  # Noir customer

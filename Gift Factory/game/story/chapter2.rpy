@@ -360,6 +360,9 @@ label chapter2:
 
                 "Keep looking forward":
                     "You have no choice. "
+        
+        scene basic_background
+        show creepy_doll at truecenter
 
         "Sitting innocently on the ledge right behind the window is a rancid, partly broken doll."
 
@@ -429,6 +432,8 @@ label chapter2:
             "Bake the cake without using the ashes":
                 $ used_ashes = False
         
+        ah "Thanks."
+
         jump chapter3
 
 label mafia_death:

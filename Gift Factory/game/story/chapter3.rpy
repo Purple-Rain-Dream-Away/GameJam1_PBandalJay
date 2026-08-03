@@ -206,6 +206,8 @@ label chapter3:
 
             m "Here. It's yours now."
 
+            $ u = "Calm Customer"
+
             "He tenderly reaches for the box of ashes."
 
             u "..."

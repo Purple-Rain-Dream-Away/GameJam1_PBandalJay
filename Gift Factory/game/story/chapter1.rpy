@@ -50,9 +50,9 @@ label chapter1:
         call screen shelf_boxing
 
         if gloves_chosen == "normal":
-            "place"
+            "Thank you! I'm sure my daughter will love using these to beat the living daylights out of anyone she meets!"
         elif gloves_chosen == "horseshoe":
-            "holder"
+            "These seem... a little heavy, don't you think?"
 
         jump .bouquet_customer
 
