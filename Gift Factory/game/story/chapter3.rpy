@@ -12,6 +12,8 @@ label chapter3:
     "They say you're bound to meet the most mind-boggling customers of your life."
 
     label .alien_customer:
+        show alien_customer
+
         "Here comes one right now."
 
         "A naked, green man stumbles through the door and stares at you with its space-black, beady eyes."
@@ -42,6 +44,8 @@ label chapter3:
         jump .skeleton_customer
 
     label .skeleton_customer:
+
+        show skeleton_customer
         "As the alien flies away on his UFO, a new customer steps into the shop..."
 
         "First come the legs, completely devoid of skin, hopping in like it's just another tuesday."
@@ -65,6 +69,8 @@ label chapter3:
         s "And so that brings us here. I require the most fabulous, ostentatious and audacious ribs you have in store!"
 
     label .elf_customer:
+        show elf_customer
+        
         "A 7-foot tall, elegant figure strides through the doorway and into your shop"
 
         "It almost hovers as it comes to a stop, and you notice its sharp ears and frail form."

@@ -152,6 +152,9 @@ label chapter2:
                 jump mafia_death
     
     label .murim_customer:
+
+        show murim_customer
+
         "It's been 500 years since the defeat of the Demonic Cult."
 
         "An era of peace for the Murim that proved to be quite prosperous."
@@ -250,6 +253,8 @@ label chapter2:
         with fade
 
         "Suddenly, the breeze turns downright frigid. A chill runs through your spine and plucks your every nerve."
+
+        show doll_customer
 
         "A tall, grinning woman stoops through the door and pads towards you. It takes her only 3 steps to reach the counter."
 

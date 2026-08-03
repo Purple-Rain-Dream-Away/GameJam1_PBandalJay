@@ -59,6 +59,8 @@ label chapter1:
 
         "Just look at this fine young lady here: the tapping of her feet and the twinkling of her eyes betray her turbulent feelings."
 
+        show delinquent_customer
+
         mic "Hi! yes uhm, I was wondering if you had anything, uh, well anything {i}sophisticated{/i} and {i}lovely{/i} and {i}fragrant{/i} and..."
 
         "Looks like {i}someone's{/i} in loveeeee."
@@ -92,7 +94,9 @@ label chapter1:
 
         if good_level > 0:
             "You begin to grow attached to this job. Seeing the smiles on the customer's face, excited to bring joy to someone they hold dear."
-        
+
+        show construction_customer
+
         "A middle-aged man walks in. He looks exhausted, presumably from a hard day's work."
 
         m "What can I get you, good sir?"
