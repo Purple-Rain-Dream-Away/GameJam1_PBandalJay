@@ -133,15 +133,6 @@ label chapter3:
 
         s "And so that brings us here. I require the most fabulous, ostentatious and audacious ribs you have in store!"
 
-<<<<<<< HEAD
-=======
-    label .elf_customer:
-        show elf_customer
-
-        "A 7-foot tall, elegant figure strides through the doorway and into your shop"
->>>>>>> c9346c4fdb9d5b43aab49f6362abb34a38bf963d
-
-
 
     label .final_customer:
         "As the day draws closer to its end, you feel an exceptional pressure from just beyond the Gift Factory's walls."
@@ -170,7 +161,41 @@ label chapter3:
 
         u "YOU"
 
-        menu:
-            ... 
+        if not used_ashes:
+            m "Wait! your brother's ashes are right here."
+
+            m "I knew something was wrong with that man. He told me it was just powder."
+
+            m "But when I looked into the box and saw... that, I knew something was up."
+
+            m "Here. It's yours now."
+
+            "He tenderly reaches for the box of ashes."
+
+            u "..."
+
+            u "Thank you."
+
+            u "Thank you so much."
+
+            jump good_ending
+        else:
+            m "Wait! I didn't mean to use your brother's ashes."
+
+            m "When that man told me to use it, he said it was just powder!"
+
+            m "I swear! I didn't know any better."
+
+            "He sneers at you, and pulls the trigger."
+
+            u "Go to hell."
+
+            jump bad_ending
+
+label good_ending:
+    return
+
+label bad_ending:
+    return
     
     return
