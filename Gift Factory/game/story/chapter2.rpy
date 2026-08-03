@@ -195,25 +195,49 @@ label chapter2:
 
         mg "Ah, do not be mistaken, my friend. The elixir is not for me to use. One of my disciples has been having problems with their lower dantian, and the Divine Physician told me to seek out an elixir from you."
 
-        #BG CHANGE
+        scene basic_background
+        show shelf
         "I swiftly searched for such an elixir, doubtful if such a thing existed within these walls."
 
         # PAUSE 
         "After a few minutes of scouring the place, I felt it."
-
+        
         "A deeply unsettling aura emanating from a box in the corner."
+        
+        call screen shelf_elixir
 
-        # SHOW THE BOX
+        scene basic_background
+
+        show box_close at truecenter
+
         m "This must be it."
 
-        # SCREEN WITH THE BOX, CLICK IT TO OPEN
+        call screen box_elixir
+
+        scene basic_background
+
+        show box_open at truecenter
+
+        show elixir at truecenter
+    
         "As I opened it, I could feel the Qi emanating from this bottle no larger than my thumb."
+
+        call screen elixir
+
+        scene basic_background
+
+        show elixir at truecenter
 
         m "Why do we have this?"
 
         "I quickly went back to the prestiged customer with the elixir in hand."
 
-        #BG CHANGE
+        scene store with fade
+
+        show murim_customer
+
+        show desk
+
         mg "Judging by that thing in your hand, I take you've found the elixir?"
 
         "A thought passes my mind. Do I really have to give this to him?"

@@ -26,7 +26,9 @@ init python:
 
 
 screen cake_pt1:
-    # INSERT BG
+    add "images/minigames/backgrounds/basic_background.png"
+    
+    add "images/minigames/backgrounds/table.png"
 
     draggroup:
         drag:
