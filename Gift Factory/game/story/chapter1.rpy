@@ -90,7 +90,6 @@ label chapter1:
         
         menu:
 
-
             "Make her a bouquet for her dearly beloved":
                 call screen bouquet_minigame
 

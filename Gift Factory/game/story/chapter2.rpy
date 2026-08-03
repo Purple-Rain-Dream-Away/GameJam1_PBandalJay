@@ -112,8 +112,12 @@ label chapter2:
 
             "Real fond o' lead too. And all the ways you can pump people full of it."
 
-            "Slide some 24-carat magic rings his way":  # Consider making a minigame for this
-                # BG CHANGE
+            "Go out back and find him a 24-carat magic golden ring":  # Consider making a minigame for this
+                scene basic_background
+                
+                "Insert smth about the guy's ring here"
+
+                "smth smth i fight him"
 
                 # EXPOSITORY DIALOGUE
 
@@ -143,7 +147,14 @@ label chapter2:
                                 "You blocked his attack!"
                             else:
                                 "That was pointless." 
-                # BACK TO COUNTER
+                scene store
+                
+                show mafia_customer
+
+                show desk
+                
+                "DIALOGUE HERE WITH GIVING HIM THE RING"
+
                 $ good_level += 1
                 # DIALOGUE HAND HIM THE RING
                 jump .murim_customer
@@ -152,8 +163,9 @@ label chapter2:
                 jump mafia_death
     
     label .murim_customer:
+        scene store with fade
 
-        show murim_customer
+        show desk
 
         "It's been 500 years since the defeat of the Demonic Cult."
 
@@ -164,6 +176,10 @@ label chapter2:
         "And as the day goes by, another customer has come looking for this humble merchant."
 
         show murim_customer
+
+        hide desk
+
+        show desk
 
         mg "Greetings, dear merchant. Alas, after a long journey to the west, I've finally arrived at the renowned Gift Factory!"
 
@@ -304,8 +320,6 @@ label chapter2:
         
         "However, right as you reach for the keys to the Gift Factory, one last interloper swings the door open."
 
-        show ashes_customer
-        
         "He lazily strides in, carrying a small, dusty box with him. He sees you and smiles."
 
         a "I know the shop's about to close, but do you have the time for just one simple request?"
