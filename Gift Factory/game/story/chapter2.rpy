@@ -105,7 +105,7 @@ label chapter2:
 
         "He brandishes a gun with his right hand, and extends his left towards you."
 
-        b "Boss wants sumfin nice for his 78th birthday. Something real sparkly... or dangerous. Make it quick."
+        b "Boss wants sumfin nice for his 78th birthday. Something real sparkly. Make it quick."
 
         menu:
             "Mafia bosses. Buncha gunk-drinkin slime-spittin fat lowlife thugs. They got a penchant for gold"
@@ -116,7 +116,17 @@ label chapter2:
                 # BG CHANGE
 
                 # EXPOSITORY DIALOGUE
+                "As you reach for the model hand that holds the rings, a vicious sneer erupts from the palm."
 
+                "It's alive."
+
+                h "Hands off the bling bub else I'll knock ya flat."
+
+                h "Ya know how I got all this drip? I strangled a fella for it. Bastard thought he could mug me."
+
+                h "Least that one had some steel in his spine. Yer just a lowlife giftwrapping minimum wage worker fresh from college."
+
+                h "I'll show you what happens when you mess with HANDY HOGAN"
                 while your_health > 0 and enemy_health > 0:
                     if enemy_health > 0:
                         $ enemy_action = renpy.random.randint(0,1)
@@ -305,7 +315,7 @@ label chapter2:
         "However, right as you reach for the keys to the Gift Factory, one last interloper swings the door open."
 
         show ashes_customer
-        
+
         "He lazily strides in, carrying a small, dusty box with him. He sees you and smiles."
 
         a "I know the shop's about to close, but do you have the time for just one simple request?"
