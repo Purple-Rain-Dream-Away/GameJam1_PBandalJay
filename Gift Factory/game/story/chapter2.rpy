@@ -285,15 +285,54 @@ label chapter2:
 
         menu:
             "Give it to her. Whatever it is, you don't need it haunting you.":
-                jump chapter3
+                jump .ashes_customer
 
             "Dispose of it. Right now. That {i}thing{/i} isn't even a part of this shop. No one should ever handle this.":
                 jump doll_death
   
     label .ashes_customer:
-        "placeholder"
+        "Satisfied, she tightly grips the doll, and starts running out as fast as her legs can carry her."
+
+        "Shouting and screaming in delight the entire time."
+
+        "As you ponder the, frankly, horrifying customers that have thus far been ruining your day, you decide to close up shop for now."
         
-        
+        "However, right as you reach for the keys to the Gift Factory, one last interloper swings the door open."
+
+        "He lazily strides in, carrying a small, dusty box with him. He sees you and smiles."
+
+        a "I know the shop's about to close, but do you have the time for just one simple request?"
+
+        a "I have th-this very special someone. I adore him really. I was wondering if you could bake a cake for him?"
+
+        "Oh fine, I'll do this ONE thing, and I'll immediately run home."
+
+        m "Got it. Cake. That should be easy. What flavor?"
+
+        a "Something simple, like cheesecake or carrot cake. The flavor doesn't really matter."
+
+        a "I just need you to place a {i}special{/i} ingredient while you're making it."
+
+        "He holds out the box to you."
+
+        m "And, uh, I hope it wouldn't be unreasonable to ask just {i}what{/i} that is exactly?"
+
+        a "Oh nothing, it's just a bit of powder really. My friend, he loves the stuff. I'm sure he'll eat it right up."
+
+        m "..."
+
+        m "Alright then."
+
+        menu:
+            # insert minigame
+            "Bake the cake using the ashes":
+                ...
+
+            "Bake the cake without using the ashes":
+                ...
+
+
+
 
 label fight_death:
     "DIE"

@@ -11,6 +11,7 @@ define m = Character("Me")
 define mg = Character("The Blessed Dragon of the Mount Hwa Sect") # murim guy
 define mm = Character("Middle-aged Man")
 define kg = Character("Anxious Girl")
+define a = Character("Creepy Customer")
 define e = Character("Elf")
 define a = Character("Alien dude")
 define s = Character('Skeleton')
