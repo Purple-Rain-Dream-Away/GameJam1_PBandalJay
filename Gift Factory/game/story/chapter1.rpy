@@ -61,16 +61,20 @@ label chapter1:
 
         show delinquent_customer
 
-        mic "Hi! yes uhm, I was wondering if you had anything, uh, well anything {i}sophisticated{/i} and {i}lovely{/i} and {i}fragrant{/i} and..."
+        mic "Morning Boss! ya got anything {i}sophisticated{/i} and {i}lovely{/i} and {i}fragrant{/i} and..."
 
-        "Looks like {i}someone's{/i} in loveeeee."
+        mic "romantic?? Like, a bouquet. a {i}real{/i} nice bouquet. Gotta woo my lady ya feel?"
 
-        mic "romantic?? Like, {size=-8}say{/size}, {size=-14}for instance{/size}, {size=-19}a bouquet...?{/size}"
+        m "Looks like {i}someone's{/i} in loveeeee."
 
-        "For Eons, young hopeful lovers have turned to the Gift Factory for the perfect present with which to woo the apple of their eyes."
+        mic "Damn straight I am! what's a lady like me to do when the most gorgeous, irresistible woman in the world sweeps me off her feet??"
 
+        m "You give her a gift of course."
+
+        mic "Exactly. Nice to meet someone with half a mind."
+        
         menu:
-            "Today, it seems, is no different."
+
 
             "Make her a bouquet for her dearly beloved":
                 call screen bouquet_minigame
