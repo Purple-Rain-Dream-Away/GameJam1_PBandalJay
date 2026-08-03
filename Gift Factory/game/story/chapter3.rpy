@@ -34,10 +34,10 @@ label chapter3:
 
         menu:
             "Let them take our company-mandated Big Bertha, never to be seen again.":
-                ...  # Minigame maybe??
+                ""  # Minigame maybe??
 
             "Inform them that Big Bertha is a beloved member of the family, and she has been for 50 long years! Nobody can take her away from us!":
-                ...  # idk refusal tracker??
+                ""  # idk refusal tracker??
 
         jump .skeleton_customer
 
@@ -91,13 +91,13 @@ label chapter3:
 
         e "The Cow."
 
-        menu:
-            "Unfortunately, for all of the Gift Factory's wonders, there has only ever been one cow in stock for the last 50 years."
+        #menu:
+        #    "Unfortunately, for all of the Gift Factory's wonders, there has only ever been one cow in stock for the last 50 years."
 
-            "And you just gave it to that lovely alien fellow a bit earlier."
+        #    "And you just gave it to that lovely alien fellow a bit earlier."
 
             # Trying to use double quotation marks here
-            "However! it is undoubtable that Big Bertha must have left some \"gifts\" of her own."
+        #    "However! it is undoubtable that Big Bertha must have left some \"gifts\" of her own."
 
             # Insert cow poop minigame. js drag and drop cow poop??? maybe??
 

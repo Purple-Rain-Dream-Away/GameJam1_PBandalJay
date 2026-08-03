@@ -7,7 +7,7 @@ init python:
 
         if not drop:
             if drags[0] in flowers_in_bouquet:
-                flowers_in_bouquet.remove(drags[0])
+                store.flowers_in_bouquet.remove(drags[0])
                 store.flower_count -= 1
 
         else:
