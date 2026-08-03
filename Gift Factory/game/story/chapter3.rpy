@@ -151,11 +151,8 @@ label chapter3:
 
         s "And so that brings us here. I require the most fabulous, ostentatious and audacious ribs you have in store!"
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 1a6ea3e0869b7d4158da1f652db3b933d7ffeb05
 
     label .final_customer:
         scene store with fade
@@ -196,8 +193,6 @@ label chapter3:
 
         u "YOU"
 
-<<<<<<< HEAD
-=======
         if not used_ashes:
             m "Wait! your brother's ashes are right here."
 
@@ -234,6 +229,5 @@ label good_ending:
 
 label bad_ending:
     return
->>>>>>> 1a6ea3e0869b7d4158da1f652db3b933d7ffeb05
     
     return
