@@ -214,6 +214,8 @@ label chapter3:
 
             u "Thank you so much."
 
+            "He leaves the premises of the Gift Factory, with what remains of his dear brother cradled tenderly in his arms."
+
             jump good_ending
         else:
             m "Wait! I didn't mean to use your brother's ashes."
@@ -229,9 +231,47 @@ label chapter3:
             jump bad_ending
 
 label good_ending:
+    scene black with fade
+
+    "A job well done it would seem."
+
+    "Your first three days here have been rather eventful."
+
+    "Yet, through it all, you were able to serve the people, as is your duty."
+
+    "Your observational skills and your willingness to connect with the people around you served you well."
+
+    "It also helped keep you alive."
+
+    "You return to your peaceful home in the dead of night, exhausted but fulfilled."
+
+    "You fall asleep, dreamless and undaunted."
+
+    "A smile appears on your slumbering face."
+
+    "Perhaps the Gift Factory isn't so bad after all."
+
+    "And perhaps... you may find yourself within its halls and behind its desk once more."
+
+    "GOOD ENDING ACHIEVED"
     return
 
 label bad_ending:
-    return
-    
+    scene black with fade
+
+    "You lay on the floor, bleeding and cold."
+
+    "These three days have been the most arduous in your entire life."
+
+    "From hopeless romantics, to creepy dolls and mafiosos, to literal aliens and elves."
+
+    "Who ever thought it'd end with a gun and a grieving man?"
+
+    "How dissapointing... How unfair"
+
+    "And yet, the world keeps turning, and life moves on without you."
+
+    "And so I hope, wherever you may be dear cashier registrar, that your soul has found peace"
+
+    "BAD ENDING ACHIEVED"
     return
