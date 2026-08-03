@@ -80,9 +80,17 @@ label chapter3:
         jump .alien_customer
     
     label .alien_customer:
+        scene store with fade
+        
+        show desk
+        
+        "Here comes another one right now."
+
         show alien_customer
 
-        "Here comes one right now."
+        hide desk
+
+        show desk
 
         "A naked, green man stumbles through the door and stares at you with its space-black, beady eyes."
 
@@ -109,8 +117,18 @@ label chapter3:
         jump .skeleton_customer
 
     label .skeleton_customer:
+        scene store with fade
+        
+        show desk
+        
+        "Here comes another one right now."
 
-        show skeleton_customer
+        show alien_customer
+
+        hide desk
+
+        show desk
+
         "As the alien flies away on his UFO, a new customer steps into the shop..."
 
         "First come the legs, completely devoid of skin, hopping in like it's just another tuesday."
@@ -133,17 +151,22 @@ label chapter3:
 
         s "And so that brings us here. I require the most fabulous, ostentatious and audacious ribs you have in store!"
 
-<<<<<<< HEAD
-=======
-    label .elf_customer:
-        show elf_customer
-
-        "A 7-foot tall, elegant figure strides through the doorway and into your shop"
->>>>>>> c9346c4fdb9d5b43aab49f6362abb34a38bf963d
 
 
 
     label .final_customer:
+        scene store with fade
+        
+        show desk
+        
+        "Here comes another one right now."
+
+        show final_customer
+
+        hide desk
+
+        show desk
+
         "As the day draws closer to its end, you feel an exceptional pressure from just beyond the Gift Factory's walls."
 
         "A weeping man stands at the doorway, brandishing a gun and aiming straight for your head."
@@ -170,7 +193,5 @@ label chapter3:
 
         u "YOU"
 
-        menu:
-            ... 
     
     return
