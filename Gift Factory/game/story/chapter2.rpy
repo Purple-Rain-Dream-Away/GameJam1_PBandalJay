@@ -304,6 +304,8 @@ label chapter2:
         
         "However, right as you reach for the keys to the Gift Factory, one last interloper swings the door open."
 
+        show ashes_customer
+        
         "He lazily strides in, carrying a small, dusty box with him. He sees you and smiles."
 
         a "I know the shop's about to close, but do you have the time for just one simple request?"
