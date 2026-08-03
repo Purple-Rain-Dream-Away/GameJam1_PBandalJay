@@ -1,4 +1,11 @@
 label chapter3:
+    scene black with fade
+    "Day 3"
+
+    scene store with fade
+    
+    show desk
+
     "Historically, the number 3 holds a great deal of significance."
 
     "3 primary colors, 3 states of matter, 3 musketeers."
@@ -11,6 +18,67 @@ label chapter3:
 
     "They say you're bound to meet the most mind-boggling customers of your life."
 
+    label .elf_customer:
+        scene store with fade
+        
+        show elf_customer
+        
+        show desk
+
+        "A 7-foot tall, elegant figure strides through the doorway and into your shop"
+
+        "It almost hovers as it comes to a stop, and you notice its sharp ears and frail form."
+
+        "Is that.... an elf???"
+
+        e "Greetings short one."
+
+        e "My people require your aid..."
+
+        e "Recently, our dearest World Tree has begun to wither."
+
+        e "Its roots desperately reach out for sustenance to no avail..."
+
+        e "Root absorption across millions of years has rendered the soil depleted and infirm."
+
+        e "Our barksages and seers have determine the one course of action that shall save us.."
+
+        e "We must procure a mythical fertilizer, solid in form and foul of smell."
+
+        e "We have heard that it is produced only by a legendary creature, of which none of my kind have ever observed."
+
+        e "A large, grazing beast, patterned black and white... I believe it is known as"
+
+        e "The Cow."
+
+        cow "Moo."
+
+        "Was that a cow?"
+
+        "In the store?"
+
+        "What the fu-"
+
+        e "I believe you have such a creature at your disposal, short one."
+
+        "Shit. Literally."
+
+        "I need to feed the cow for it to make his fertilizer."
+
+        call screen feed_cow
+
+        m "I just fed the cow, it'll take a while until it makes your request."
+
+        "4 hours later."
+
+        call screen take_shit
+
+        m "Here you go..."
+
+        e "My sincerest gratitude, short one, may you be blessed by the World Tree."
+
+        jump .alien_customer
+    
     label .alien_customer:
         show alien_customer
 
@@ -20,26 +88,23 @@ label chapter3:
 
         "It awkwardly raises its hands in a sign of peace; then hesitantly lowers them."
 
-        a "Oxygen and Heat upon you, Earthling!"
+        ad "Oxygen and Heat upon you, Earthling!"
 
-        a "My people, the Qudxy, require an {i}exotic animal{/i} for our arkship sanctuaries."
+        ad "My people, the Qudxy, require an {i}exotic animal{/i} for our arkship sanctuaries."
 
-        a "In time we hope to construct a zoo-arcology of such immense proportions as to be able to populate an entire world."
+        ad "In time we hope to construct a zoo-arcology of such immense proportions as to be able to populate an entire world."
 
-        a "We've heard that this planet hosts a unique creature currently unknown to the cosmos at large."
+        ad "We've heard that this planet hosts a unique creature currently unknown to the cosmos at large."
 
-        a "A stout, gaseous and supposedly delicious herbivore known as: The Cow."
+        ad "A stout, gaseous and supposedly delicious herbivore known as: The Cow."
 
-        a "It'll be perfect for our kitch- sanctuaries! I meant sanctuaries!"
+        ad "It'll be perfect for our kitch- sanctuaries! I meant sanctuaries!"
 
-        "It just so happens that the Gift Factory ALWAYS keeps a singular (1) cow on the premises for just this occassion."
+        "Guess I know what to do with the cow now."
 
-        menu:
-            "Let them take our company-mandated Big Bertha, never to be seen again.":
-                ""  # Minigame maybe??
+        call screen get_cow
 
-            "Inform them that Big Bertha is a beloved member of the family, and she has been for 50 long years! Nobody can take her away from us!":
-                ""  # idk refusal tracker??
+
 
         jump .skeleton_customer
 
@@ -68,46 +133,7 @@ label chapter3:
 
         s "And so that brings us here. I require the most fabulous, ostentatious and audacious ribs you have in store!"
 
-    label .elf_customer:
-        show elf_customer
-        
-        "A 7-foot tall, elegant figure strides through the doorway and into your shop"
 
-        "It almost hovers as it comes to a stop, and you notice its sharp ears and frail form."
-
-        "Is that.... an elf???"
-
-        e "Greetings short one."
-
-        e "My people require your aid..."
-
-        e "Recently, our dearest World Tree has begun to wither."
-
-        e "Its roots desperately reach out for sustenance to no avail..."
-
-        e "Root absorption across millions of years has rendered the soil depleted and infirm."
-
-        e "Our barksages and seers have determine the one course of action that shall save us.."
-
-        e "We must procure a mythical fertilizer, solid in form and foul of smell."
-
-        e "We have heard that it is produced only by a legendary creature, of which none of my kind have ever observed."
-
-        e "A large, grazing beast, patterned black and white... I believe it is known as"
-
-        e "The Cow."
-
-        #menu:
-        #    "Unfortunately, for all of the Gift Factory's wonders, there has only ever been one cow in stock for the last 50 years."
-
-        #    "And you just gave it to that lovely alien fellow a bit earlier."
-
-            # Trying to use double quotation marks here
-        #    "However! it is undoubtable that Big Bertha must have left some \"gifts\" of her own."
-
-            # Insert cow poop minigame. js drag and drop cow poop??? maybe??
-
-        jump .final_customer
 
 
     label .final_customer:

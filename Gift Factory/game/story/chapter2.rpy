@@ -6,13 +6,23 @@ default enemy_action = 0
 default your_damage = 0
 
 label chapter2:
+    scene black with fade
+    "Day 2"
+    
+    scene store
+    show desk
+
+    
     "As the wheel turns and the days go on, a multitude of people pass into the store."
 
     "Some... weirder than others"
 
     label .dog_customer:
-        scene bg uni
-        with fade
+        scene store with fade
+
+        show collar_customer
+
+        show desk
 
         "A girl nervously walks into the store."
         
@@ -24,15 +34,16 @@ label chapter2:
 
         "Why is she so nervous?"
 
-        "Doesn't matter, let's go find what she needs."
-
-        # PAN TO SHELF
-
         m "What kind of collar are you looking for?"
 
         kg "S-something simple, my \"dog\" isn't t-too picky."
 
         m "I'll see what we have in stock."
+
+        "Doesn't matter, let's go find what she needs."
+
+        call screen shelf_collar
+
 
         # SHELF MINIGAME
         m "This one should do."
@@ -99,6 +110,10 @@ label chapter2:
 
         show mafia_customer
 
+        hide grey_desk
+        
+        show grey_desk
+
         "A rugged figure bursts through the door, panting and eyes drooping and...."
 
         "Perhaps still unbathed."
@@ -114,12 +129,9 @@ label chapter2:
 
             "Go out back and find him a 24-carat magic golden ring":  # Consider making a minigame for this
                 scene basic_background
+
+                show hand at truecenter
                 
-                "Insert smth about the guy's ring here"
-
-                "smth smth i fight him"
-
-                # EXPOSITORY DIALOGUE
                 "As you reach for the model hand that holds the rings, a vicious sneer erupts from the palm."
 
                 "It's alive."
@@ -131,6 +143,7 @@ label chapter2:
                 h "Least that one had some steel in his spine. Yer just a lowlife giftwrapping minimum wage worker fresh from college."
 
                 h "I'll show you what happens when you mess with HANDY HOGAN"
+
                 while your_health > 0 and enemy_health > 0:
                     if enemy_health > 0:
                         $ enemy_action = renpy.random.randint(0,1)
@@ -150,18 +163,28 @@ label chapter2:
                                 $ your_health -= renpy.random.randint(1,3)
                                 "You were hit."
                                 if your_health <= 0:
+                                    scene black with fade
                                     "You black out."
                                     jump .murim_customer
                         "Defend":
                             if enemy_action == 0:
                                 "You blocked his attack!"
                             else:
-                                "That was pointless." 
-                scene store
+                                "That was pointless."
+ 
+                "You've defeated the hand."
+
+                call screen ring
+
+                scene basic_background
+
+                "Betta get back to the customah."
+
+                scene grey_store
                 
                 show mafia_customer
 
-                show desk
+                show grey_desk
                 
                 "DIALOGUE HERE WITH GIVING HIM THE RING"
 
@@ -299,12 +322,20 @@ label chapter2:
                 return
 
     label .doll_customer:
-        scene bg uni
+        scene store
         with fade
+        
+        show eyes_background onlayer foreground
+
+        show desk
 
         "Suddenly, the breeze turns downright frigid. A chill runs through your spine and plucks your every nerve."
 
         show doll_customer
+
+        hide desk
+
+        show desk
 
         "A tall, grinning woman stoops through the door and pads towards you. It takes her only 3 steps to reach the counter."
 
@@ -346,6 +377,12 @@ label chapter2:
                 jump doll_death
   
     label .ashes_customer:
+        scene store with fade
+
+        hide eyes_background onlayer foreground
+
+        show desk
+
         "Satisfied, she tightly grips the doll, and starts running out as fast as her legs can carry her."
 
         "Shouting and screaming in delight the entire time."
@@ -354,30 +391,31 @@ label chapter2:
         
         "However, right as you reach for the keys to the Gift Factory, one last interloper swings the door open."
 
-<<<<<<< HEAD
-=======
         show ashes_customer
 
->>>>>>> c1079e68c0fe8dfeae78899b36c3956efe91c3a3
+        hide desk
+        
+        show desk
+
         "He lazily strides in, carrying a small, dusty box with him. He sees you and smiles."
 
-        a "I know the shop's about to close, but do you have the time for just one simple request?"
+        ah "I know the shop's about to close, but do you have the time for just one simple request?"
 
-        a "I have th-this very special someone. I adore him really. I was wondering if you could bake a cake for him?"
+        ah "I have th-this very special someone. I adore him really. I was wondering if you could bake a cake for him?"
 
         "Oh fine, I'll do this ONE thing, and I'll immediately run home."
 
         m "Got it. Cake. That should be easy. What flavor?"
 
-        a "Something simple, like cheesecake or carrot cake. The flavor doesn't really matter."
+        ah "Something simple, like cheesecake or carrot cake. The flavor doesn't really matter."
 
-        a "I just need you to place a {i}special{/i} ingredient while you're making it."
+        ah "I just need you to place a {i}special{/i} ingredient while you're making it."
 
         "He holds out the box to you."
 
         m "And, uh, I hope it wouldn't be unreasonable to ask just {i}what{/i} that is exactly?"
 
-        a "Oh nothing, it's just a bit of powder really. My friend, he loves the stuff. I'm sure he'll eat it right up."
+        ah "Oh nothing, it's just a bit of powder really. My friend, he loves the stuff. I'm sure he'll eat it right up."
 
         m "..."
 
@@ -390,21 +428,17 @@ label chapter2:
 
             "Bake the cake without using the ashes":
                 ""
-
-
-
-
-label fight_death:
-    "DIE"
-
-    return
+        
+        jump chapter3
 
 label mafia_death:
+    scene black with fade
     "Real clever, sticking it to him like that. Real cheap way to find yourself 6 feet under."
 
     return
 
 label doll_death:
+    scene black with fade
     "The drive home is a blur. Nothing but chrome-colored unfinished buildings line the way home anyway."
 
     "You pull up into the driveway and fiddle with the singular key on your keychain."

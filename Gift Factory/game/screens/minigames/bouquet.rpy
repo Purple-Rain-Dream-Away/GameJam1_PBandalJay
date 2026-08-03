@@ -20,7 +20,7 @@ init python:
 
 screen bouquet_minigame:
 
-    add "images/minigames/bouquet/bouquet bg.jpg"
+    add "images/minigames/backgrounds/garden.jpg"
 
     draggroup:
 

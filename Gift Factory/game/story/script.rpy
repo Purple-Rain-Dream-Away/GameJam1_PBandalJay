@@ -11,12 +11,16 @@ define m = Character("Me")
 define mg = Character("The Blessed Dragon of the Mount Hwa Sect") # murim guy
 define mm = Character("Middle-aged Man")
 define kg = Character("Anxious Girl")
-define a = Character("Creepy Customer")
+define ah = Character("Creepy Customer")
 define e = Character("Elf")
-define a = Character("Alien dude")
+define ad = Character("Alien dude")
 define s = Character('Skeleton')
-# The game starts here.
+define h = Character("Hand")
+define cow = Character("Cow")
 
+
+# The game starts here.
+define config.layers = [  "foreground", 'master', 'transient', 'screens','overlay' ]
 
 # Standard gift giving
 label start:
